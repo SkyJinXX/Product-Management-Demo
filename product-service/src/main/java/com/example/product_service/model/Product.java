@@ -6,6 +6,13 @@ public class Product {
     private String description;
     private Double price;
 
+    public Product(Long id, String name,   String description, Double price) {
+        this.name = name;
+        this.id = id;
+        this.price = price;
+        this.description = description;
+    }
+
     public Long getId() {
         return id;
     }
