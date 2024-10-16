@@ -1,6 +1,5 @@
 package com.example.product_service.model;
 
-import com.example.inventory_service.model.Inventory;
 
 public class ProductWithQuantity extends Product {
 

@@ -1,6 +1,5 @@
 package com.example.product_service.controller;
 
-import com.example.product_service.client.InventoryClient;
 import com.example.product_service.model.Product;
 import com.example.product_service.model.ProductWithQuantity;
 import com.example.product_service.service.ProductService;
@@ -11,11 +10,9 @@ import java.util.List;
 @RestController
 public class ProductController {
 
-    private final InventoryClient inventoryClient;
     private final ProductService productService;
 
-    public ProductController(InventoryClient inventoryClient, ProductService productService) {
-        this.inventoryClient = inventoryClient;
+    public ProductController(ProductService productService) {
         this.productService = productService;
     }
 

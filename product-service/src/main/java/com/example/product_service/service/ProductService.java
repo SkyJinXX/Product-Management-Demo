@@ -1,9 +1,9 @@
 package com.example.product_service.service;
 
 import com.example.product_service.client.InventoryClient;
+import com.example.product_service.dto.InventoryDTO;
 import com.example.product_service.mapper.ProductMapper;
 import com.example.product_service.model.Product;
-import com.example.inventory_service.model.Inventory;
 import com.example.product_service.model.ProductWithQuantity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -26,7 +26,7 @@ public class ProductService {
         // 保存产品
         productMapper.insertProduct(product);
         // 创建对应的库存
-        inventoryClient.createInventory(new Inventory(product.getId(), initialQuantity));
+        inventoryClient.createInventory(new InventoryDTO(product.getId(), initialQuantity));
     }
 
     @Cacheable(value = "inventoryCache", key = "#productId")
