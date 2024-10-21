@@ -4,5 +4,5 @@ FROM openjdk:17-jdk-alpine
 COPY target/inventory-service.jar /app/inventory-service.jar
 # 暴露容器的端口
 EXPOSE 8081
-# 运行 jar 文件
+# 运行 jar 文件1
 ENTRYPOINT ["java", "-jar", "/app/inventory-service.jar"]
